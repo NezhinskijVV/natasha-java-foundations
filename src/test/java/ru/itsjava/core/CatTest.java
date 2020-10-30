@@ -1,7 +1,6 @@
 package ru.itsjava.core;
 
 import org.junit.jupiter.api.*;
-import org.junit.runner.RunWith;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

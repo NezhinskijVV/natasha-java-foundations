@@ -1,6 +1,8 @@
 package ru.itsjava.collections.list.my.list.arraylist;
 
 
+import java.util.Arrays;
+
 public class MyArrayList {
     private static final int DEFAULT_CAPACITY = 10;
     private int realSize;
@@ -33,8 +35,31 @@ public class MyArrayList {
         return true;
     }
 
+    //              0 1 2 3
+    //  array       3 7 9 10
+
+    //              0 1 2
+    //resArray      3 7 10
+
     public boolean remove(Object o) {
-        return false;
+//        Object[] resArray = new Object[realSize - 1];
+        int delIndex = -1;
+        for (int i = 0; i < realSize; i++) {
+            if (o.equals(array[i])) {
+                delIndex = i;
+                break;
+            }
+//            resArray[i] = array[i];
+        }
+        if (delIndex == -1) return false;
+
+        for (int i = delIndex; i < realSize - 1; i++) {
+            array[i] = array[i + 1];
+        }
+//        array = resArray;
+        realSize--;
+        array[realSize] = null;
+        return true;
     }
 
     public void clear() {
@@ -42,7 +67,14 @@ public class MyArrayList {
     }
 
     public Object get(int index) {
-        return null;
+        checkIndex(index);
+        return array[index];
+    }
+
+    private void checkIndex(int index) {
+        if ((index >= realSize) || (index < 0)) {
+            throw new ArrayIndexOutOfBoundsException(index);
+        }
     }
 
     public Object set(int index, Object element) {
@@ -64,4 +96,16 @@ public class MyArrayList {
     public int lastIndexOf(Object o) {
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return "MyArrayList{" + Arrays.toString(array) + '}';
+    }
 }
+
+//ДЗ:
+//1. Реализовать оставшиеся методы
+//toString()  //не забыть про StringBuilder
+//проверки на null
+//2. Тесты на все методы
+//3. SOLID Чистая архитектура Роберт Мартин
