@@ -37,7 +37,7 @@ public class ArrayListPractice {
             }
         }
 
-
+        watches.add(0, vitaliyWatch);
     }
 }
 
