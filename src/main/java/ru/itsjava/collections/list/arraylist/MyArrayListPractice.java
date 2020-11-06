@@ -1,4 +1,4 @@
-package ru.itsjava.collections.list.my.list.arraylist;
+package ru.itsjava.collections.list.arraylist;
 
 public class MyArrayListPractice {
 
@@ -29,8 +29,6 @@ public class MyArrayListPractice {
 
 //        System.out.println(list.get(12));
         System.out.println(list.get(0));
-
-
         System.out.println(list);
         list.remove(null);
         list.remove("Str13");

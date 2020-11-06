@@ -1,4 +1,4 @@
-package ru.itsjava.collections.list;
+package ru.itsjava.collections;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
