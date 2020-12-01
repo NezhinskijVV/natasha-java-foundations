@@ -1,6 +1,5 @@
 package ru.itsjava.iostreams;
 
-import lombok.SneakyThrows;
 
 import java.io.*;
 
@@ -21,7 +20,6 @@ public class IOStreamPractice {
         try (PrintWriter printWriter = new PrintWriter(file)) {
             printWriter.println("ashdfa");
             printWriter.flush();
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
